@@ -26,7 +26,7 @@ public class Books {
                 temp[counter++] = books[i];
             }
         }
-        return Arrays.copyOf(temp,counter);
+        return Arrays.copyOf(temp, counter);
     }
 
     public Book[] getByPublisher(String publisher) {
@@ -39,7 +39,7 @@ public class Books {
                 temp[counter++] = books[i];
             }
         }
-        return Arrays.copyOf(temp,counter);
+        return Arrays.copyOf(temp, counter);
     }
 
     public Book[] getByYear(int year) {
@@ -48,10 +48,10 @@ public class Books {
         int counter = 0;
 
         for (int i = 0; i < temp.length; i++) {
-            if (books[i].getYear()>year) {
+            if (books[i].getYear() > year) {
                 temp[counter++] = books[i];
             }
         }
-        return Arrays.copyOf(temp,counter);
+        return Arrays.copyOf(temp, counter);
     }
 }
