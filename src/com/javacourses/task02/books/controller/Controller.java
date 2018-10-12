@@ -8,7 +8,6 @@ import com.javacourses.task02.books.util.UserInput;
 import com.javacourses.task02.books.view.BooksViewer;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Controller {
 

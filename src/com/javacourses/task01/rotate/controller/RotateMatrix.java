@@ -22,8 +22,9 @@ public class RotateMatrix {
         }
 
         transpose(m);
+        Viewer.print(m);
         reverseColumns(m);
-//        transposeExtra(m);
+//        rotateExtra(m);
         Viewer.print(m);
     }
 
@@ -68,7 +69,7 @@ public class RotateMatrix {
         }
     }
 
-    private static void transposeExtra(Matrix m) {
+    private static void rotateExtra(Matrix m) {
 
         int[][] array = m.getArr();
         int size = array.length;
