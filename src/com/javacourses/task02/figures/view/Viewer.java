@@ -7,7 +7,7 @@ public class Viewer {
     public void printShapes(String message ,Shape[] shapes) {
         System.out.println(message);
         for (Shape s : shapes) {
-            System.out.println(s);
+            s.draw();
         }
     }
 

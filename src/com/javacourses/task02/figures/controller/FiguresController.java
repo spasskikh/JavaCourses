@@ -20,7 +20,6 @@ public class FiguresController {
 
     public void run() {
         model.setShapes(DataSource.get());
-        model.drawFigure();
 
         viewer.printMenu();
 
@@ -70,15 +69,15 @@ public class FiguresController {
         switch (figure) {
             case 1:
                 viewer.printMessage("Total area for all circles: "
-                        + String.format("%.2f", model.getFigureArea(new Circle())));
+                        + String.format("%.2f", model.getFigureArea("Circle")));
                 break;
             case 2:
                 viewer.printMessage("Total area for all rectangles: "
-                        + String.format("%.2f", model.getFigureArea(new Rectangle())));
+                        + String.format("%.2f", model.getFigureArea("Rectangle")));
                 break;
             case 3:
                 viewer.printMessage("Total area for all triangles: "
-                        + String.format("%.2f", model.getFigureArea(new Triangle())));
+                        + String.format("%.2f", model.getFigureArea("Triangle")));
                 break;
             default:
                 viewer.printMessage("Incorrect parameter.");

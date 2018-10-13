@@ -6,13 +6,11 @@ public class Triangle extends Shape {
     private double h;
     private double area;
 
-    public Triangle() {
-    }
-
     public Triangle(String shapeColor, double a, double h) {
         super(shapeColor);
         this.a = a;
         this.h = h;
+        area = calcArea();
     }
 
     public double getA() {
@@ -45,12 +43,7 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public void draw() {
-        area = calcArea();
-    }
-
-    @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " (area: " + String.format("%.2f",area) + ") - " + getShapeColor();
+        return super.toString() +" - area: "+ String.format("%.2f",area);
     }
 }

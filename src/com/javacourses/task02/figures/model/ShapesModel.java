@@ -17,12 +17,6 @@ public class ShapesModel {
         this.shapes = shapes;
     }
 
-    public void drawFigure() {
-        for (Shape s : shapes) {
-            s.draw();
-        }
-    }
-
     public double getTotalArea() {
         double res = 0;
         for (Shape s : shapes) {
@@ -37,14 +31,14 @@ public class ShapesModel {
         return res;
     }
 
-    public double getFigureArea(Object o) {
+    public double getFigureArea(String str) {
         double res = 0;
         for (Shape s : shapes) {
-            if (o instanceof Circle && s instanceof Circle) {
+            if ("Circle".equals(str) && s instanceof Circle) {
                 res += ((Circle) s).getArea();
-            } else if (o instanceof Triangle && s instanceof Triangle) {
+            } else if ("Triangle".equals(str) && s instanceof Triangle) {
                 res += ((Triangle) s).getArea();
-            } else if (o instanceof Rectangle && s instanceof Rectangle) {
+            } else if ("Rectangle".equals(str) && s instanceof Rectangle) {
                 res += ((Rectangle) s).getArea();
             }
         }

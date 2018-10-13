@@ -4,12 +4,7 @@ public abstract class Shape implements Drawable {
 
     private String shapeColor;
 
-    public abstract double calcArea();
-
-    public Shape() {
-    }
-
-    public Shape(String shapeColor) {
+    Shape(String shapeColor) {
         this.shapeColor = shapeColor;
     }
 
@@ -21,8 +16,15 @@ public abstract class Shape implements Drawable {
         this.shapeColor = shapeColor;
     }
 
+    public abstract double calcArea();
+
+    @Override
+    public void draw() {
+        System.out.println(toString());
+    }
+
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " (area: n/a) - " + " - " + shapeColor;
+        return this.getClass().getSimpleName() + " - " + shapeColor;
     }
 }

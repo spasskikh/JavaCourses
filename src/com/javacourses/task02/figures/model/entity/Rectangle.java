@@ -6,13 +6,11 @@ public class Rectangle extends Shape {
     private double b;
     private double area;
 
-    public Rectangle() {
-    }
-
     public Rectangle(String shapeColor, double a, double b) {
         super(shapeColor);
         this.a = a;
         this.b = b;
+        area = calcArea();
     }
 
     public double getA() {
@@ -45,12 +43,7 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public void draw() {
-        area = calcArea();
-    }
-
-    @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " (area: " + String.format("%.2f", area) + ") - " + getShapeColor();
+        return super.toString() +" - area: "+ String.format("%.2f",area);
     }
 }

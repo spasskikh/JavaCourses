@@ -18,9 +18,4 @@ public class UserInput {
         }
     }
 
-    public String getLine() {
-        scanner.nextLine();
-        return scanner.nextLine();
-    }
-
 }
