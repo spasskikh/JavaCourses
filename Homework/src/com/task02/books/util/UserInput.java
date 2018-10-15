@@ -22,4 +22,8 @@ public class UserInput {
         scanner.nextLine();
         return scanner.nextLine();
     }
+
+    public String nextLine() {
+        return scanner.nextLine();
+    }
 }
