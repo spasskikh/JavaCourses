@@ -1,5 +1,7 @@
 package com.task02.figures.model.entity;
 
+import java.util.Objects;
+
 public class Rectangle extends Shape {
 
     private double a;
@@ -46,4 +48,15 @@ public class Rectangle extends Shape {
     public String toString() {
         return super.toString() +" - area: "+ String.format("%.2f",area);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return Double.compare(rectangle.a, a) == 0 &&
+                Double.compare(rectangle.b, b) == 0 &&
+                Double.compare(rectangle.area, area) == 0;
+    }
+
 }

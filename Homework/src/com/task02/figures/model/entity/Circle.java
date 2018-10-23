@@ -1,5 +1,7 @@
 package com.task02.figures.model.entity;
 
+import java.util.Objects;
+
 public class Circle extends Shape {
 
     private double r;
@@ -36,4 +38,14 @@ public class Circle extends Shape {
     public String toString() {
         return super.toString() +" - area: "+ String.format("%.2f",area);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(circle.r, r) == 0 &&
+                Double.compare(circle.area, area) == 0;
+    }
+
 }
