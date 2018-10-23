@@ -24,7 +24,7 @@ public class ShapesModelTest {
         t = new Triangle("white", 10, 10);
         r = new Rectangle("black", 10, 10);
         model = new ShapesModel();
-        model.setShapes(new Shape[]{t, r});
+        model.setShapes(new Shape[]{r, t});
     }
 
     @Test
