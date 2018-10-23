@@ -3,6 +3,8 @@ package com.task02.figures.controller;
 import com.task02.figures.model.ShapesModel;
 import com.task02.figures.model.data.DataSource;
 import com.task02.figures.model.entity.Shape;
+import com.task02.figures.util.AreaComparator;
+import com.task02.figures.util.ColorComparator;
 import com.task02.figures.util.UserInput;
 import com.task02.figures.view.Viewer;
 
@@ -84,23 +86,13 @@ public class FiguresController {
     }
 
     private void sortByArea() {
-        Shape[] shapes = model.getShapes();
-
-        Arrays.sort(shapes, new Comparator<Shape>() {
-            @Override
-            public int compare(Shape s1, Shape s2) {
-                return (int)(s1.calcArea()-s2.calcArea());
-            }
-        });
-        viewer.printShapes("Sorted by area:", shapes);
+        model.sort(new AreaComparator());
+        viewer.printShapes("Sorted by area:", model.getShapes());
 
     }
 
     private void sortByColor() {
-        Shape[] shapes = model.getShapes();
-
-        Arrays.sort(shapes, (s1,s2) -> s1.getShapeColor().compareTo(s2.getShapeColor()));
-
-        viewer.printShapes("Sorted by color:", shapes);
+        model.sort(new ColorComparator());
+        viewer.printShapes("Sorted by color:", model.getShapes());
     }
 }

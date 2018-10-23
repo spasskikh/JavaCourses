@@ -5,6 +5,9 @@ import com.task02.figures.model.entity.Shape;
 import com.task02.figures.model.entity.Rectangle;
 import com.task02.figures.model.entity.Triangle;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class ShapesModel {
 
     private Shape[] shapes;
@@ -46,4 +49,7 @@ public class ShapesModel {
     }
 
 
+    public void sort(Comparator<Shape> comparator) {
+        Arrays.sort(shapes, comparator);
+    }
 }
