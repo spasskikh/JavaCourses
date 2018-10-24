@@ -88,8 +88,7 @@ public class Controller {
 
     private void sortByPublisher() {
 
-        Book[] books = model.getBooks();
-        Arrays.sort(books, new BookComparator());
-        viewer.printBooks("Sorted by Publisher:", books);
+        model.sort(new BookComparator());
+        viewer.printBooks("Sorted by Publisher:", model.getBooks());
     }
 }

@@ -3,6 +3,7 @@ package com.task02.books.model;
 import com.task02.books.model.entity.Book;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Books {
 
@@ -53,5 +54,9 @@ public class Books {
             }
         }
         return Arrays.copyOf(temp, counter);
+    }
+
+    public void sort(Comparator<Book> comparator) {
+        Arrays.sort(books, comparator);
     }
 }
