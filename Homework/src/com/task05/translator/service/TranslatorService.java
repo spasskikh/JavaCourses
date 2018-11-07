@@ -4,7 +4,7 @@ import com.task05.recordbook.util.UserInput;
 import com.task05.translator.model.TranslatorModel;
 
 import java.util.Map;
-//fixing
+
 public class TranslatorService {
 
     private TranslatorModel model;

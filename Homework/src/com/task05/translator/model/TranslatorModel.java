@@ -4,7 +4,7 @@ import com.task05.translator.model.data.DataSource;
 
 import java.util.HashMap;
 import java.util.Map;
-//fixing
+
 public class TranslatorModel {
 
     private Map<String, String> dictionary;

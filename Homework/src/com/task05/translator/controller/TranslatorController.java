@@ -2,7 +2,7 @@ package com.task05.translator.controller;
 
 import com.task05.translator.view.View;
 import com.task05.translator.service.TranslatorService;
-//fixing
+
 public class TranslatorController {
 
     private TranslatorService service;
