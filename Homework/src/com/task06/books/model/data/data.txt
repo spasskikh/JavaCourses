@@ -1,0 +1,10 @@
+Book1, pub1, author1, 2000, 100, 100.00
+Book4, pub1, author4, 2000, 400, 130.00
+Book2, pub2, author2, 2001, 200, 110.00
+Book6, pub2, author5, 2006, 300, 160.00
+Book3, pub3, author5, 2002, 300, 120.00
+Book7, pub3, author5, 2007, 100, 170.00
+Book8, pub3, author3, 2000, 400, 180.00
+Book9, pub4, author6, 2009, 200, 190.00
+Book5, pub5, author5, 2004, 500, 140.00
+
