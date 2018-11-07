@@ -1,7 +1,7 @@
 package com.task05.translator.view;
 
 import java.util.Map;
-
+//fixing
 public class View {
 
     public void printMessage(String str) {

@@ -2,7 +2,7 @@ package com.task05.translator.model.data;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//fixing
 public class DataSource {
 
     public static Map<String, String> get() {
