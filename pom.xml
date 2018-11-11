@@ -16,6 +16,7 @@
     <modules>
         <module>Homework</module>
         <module>Project01_v18</module>
+        <module>Project02_v02</module>
     </modules>
 
     <properties>
