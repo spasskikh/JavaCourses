@@ -67,10 +67,7 @@ public class BooksModel {
 
     public void addNewBook(Book newBook) {
         Book[] newBooks = new Book[books.length + 1];
-
-        for (int i = 0; i < books.length; i++) {
-            newBooks[i] = books[i];
-        }
+        System.arraycopy(books, 0, newBooks, 0, books.length);
         newBooks[newBooks.length - 1] = newBook;
 
         books = newBooks;

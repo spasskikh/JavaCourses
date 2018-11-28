@@ -7,4 +7,3 @@ Book7, pub3, author5, 2007, 100, 170.00
 Book8, pub3, author3, 2000, 400, 180.00
 Book9, pub4, author6, 2009, 200, 190.00
 Book5, pub5, author5, 2004, 500, 140.00
-
