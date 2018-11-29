@@ -1,21 +1,24 @@
-package com.task09.task09_01.util;
+package com.task09.task09_02.util;
 
-import com.task09.task09_01.model.data.DataSource;
-import com.task09.task09_01.model.entity.Book;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+import com.task09.task09_02.model.data.DataSource;
+import com.task09.task09_02.model.entity.Book;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class InputOutputFile {
-    private final static Logger logger = Logger.getLogger(InputOutputFile.class);
-
 
     static {
-        PropertyConfigurator.configure("./Homework/resources/task09_01/log4j.properties");
+        Path path = Paths.get("/home/anton/Documents/java/IdeaProjects/JavaCourses/Homework/resources/task09_02/log4j2.xml");
+        System.setProperty("log4j.configurationFile", path.toString());
     }
 
-    private static File file = new File("./Homework/src/com/task09/task09_01/model/data/data.ser");
+    private final static Logger logger = LogManager.getLogger(InputOutputFile.class);
+
+    private static File file = new File("./Homework/src/com/task09/task09_02/model/data/data.ser");
 
     public static Book[] load() {
         try (ObjectInput oi = new ObjectInputStream(new FileInputStream(file))) {
