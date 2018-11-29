@@ -3,16 +3,16 @@ package com.task08.task08_05;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.SynchronousQueue;
 
 public class Matcher implements Runnable {
 
     private File dir;
     private char symbol;
-    private Map<String, Integer> result;
+    private SynchronousQueue<String> result;
 
-    public Matcher(File dir, char symbol, Map<String, Integer> result) {
+    public Matcher(File dir, char symbol, SynchronousQueue<String> result) {
         this.dir = dir;
         this.symbol = symbol;
         this.result = result;
@@ -23,7 +23,7 @@ public class Matcher implements Runnable {
         try (Scanner sc = new Scanner(new FileInputStream(file))) {
             while (sc.hasNextLine()) {
                 String str = sc.nextLine();
-                String[] split = str.split("\\W");
+                String[] split = str.split("\\b");
                 for (String s : split) {
                     if (!s.isEmpty() && s.toCharArray()[0] == symbol) {
                         counter++;
@@ -43,15 +43,16 @@ public class Matcher implements Runnable {
         File[] files = dir.listFiles();
 
         for (File ff : files) {
-            if (ff.isDirectory()) {
-                System.out.println(ff.getName());
-                new Thread(new Matcher(ff, symbol, result)).start();
-            } else {
-                wordsCounter = search(ff);
-                System.out.println(ff.getName());
-                if (wordsCounter != 0) {
-                    result.put(ff.getName(), wordsCounter);
+            try {
+                if (ff.isDirectory()) {
+                    Thread thread = new Thread(new Matcher(ff, symbol, result));
+                    thread.start();
+                    thread.join();
+                } else if ((wordsCounter = search(ff)) > 0) {
+                    result.put(ff.getName() + " - " + wordsCounter);
                 }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }

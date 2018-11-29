@@ -4,9 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.SynchronousQueue;
 
 public class Runner {
 
@@ -14,12 +13,12 @@ public class Runner {
 
     public void run() throws InterruptedException {
 
-        Map<String, Integer> result = new ConcurrentHashMap<>();
+        SynchronousQueue<String> result = new SynchronousQueue<>();
 
         String dir = getParam("Enter directory:");
         char symbol = getParam("Enter symbol:").toCharArray()[0];
 
-        FileWriterResult writer = new FileWriterResult(result, RESULT_SET);
+        Writer writer = new Writer(result, RESULT_SET);
         Thread fileWriterThread = new Thread(writer);
         fileWriterThread.start();
 
@@ -28,7 +27,7 @@ public class Runner {
         fileScannerThread.start();
         fileScannerThread.join();
 
-        result.put("DONE", 0);
+        result.put("DONE");
         fileWriterThread.join();
 
         printResults(RESULT_SET);
