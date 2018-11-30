@@ -73,7 +73,6 @@ public class Service {
     public void changeLanguage(int choice) {
         Language[] languages = Language.values();
         Locale locale = languages[choice - 1].getLocale();
-        System.out.println(locale.getDisplayCountry());
         manager.changeLocale(locale);
     }
 }
