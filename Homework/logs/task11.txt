@@ -1,0 +1,6 @@
+[2018-12-01 T19:03:53] - Access denied for user 'root'@'localhost' (using password: YES)
+[2018-12-01 T20:36:08] - Information successfully queried.
+[2018-12-01 T20:36:19] - Information successfully queried.
+[2018-12-01 T20:36:32] - Information successfully queried.
+[2018-12-01 T20:36:42] - Information successfully queried.
+[2018-12-01 T20:36:49] - Information successfully queried.
