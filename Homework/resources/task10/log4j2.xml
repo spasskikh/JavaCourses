@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorinterval="30" status="info" strict="true">
+
+    <Properties>
+        <Property name="LOG_PATTERN">[%d{yyyy-MM-dd 'T'HH:mm:ss}] - %m%n</Property>
+        <Property name="LOG_ROOT">/home/anton/Documents/java/IdeaProjects/JavaCourses/Homework/logs</Property>
+    </Properties>
+
+    <Appenders>
+
+        <Appender type="Console" name="Console">
+            <Layout type="PatternLayout" pattern="${LOG_PATTERN}" />
+        </Appender>
+
+        <Appender type="File" name="File" fileName="${LOG_ROOT}/task10.txt">
+            <Layout type="PatternLayout" pattern="${LOG_PATTERN}" />
+        </Appender>
+
+    </Appenders>
+
+    <Loggers>
+        
+        <Logger name="com.task10.util.InputOutputFile"
+                level="info" additivity="false">
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Root level="error">
+            <AppenderRef ref="Console" />
+        </Root>
+
+    </Loggers>
+
+</Configuration>
