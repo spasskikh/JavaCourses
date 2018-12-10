@@ -24,7 +24,7 @@ public class Controller {
 
         while (true) {
             try {
-                view.printMessage(manager.getMessage("mainMenu"));
+                view.printMessage(manager.getMessage("MAIN_MENU"));
                 int number = InputUtility.inputInt(view, manager);
                 Command command = defineCommand(number);
                 view.printMessage(command.execute(service));

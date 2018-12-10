@@ -10,9 +10,9 @@ public class InputUtility {
     private static Scanner sc = new Scanner(System.in);
 
     public static int inputInt(View view, ResourceManager manager) {
-        view.printMessage(manager.getMessage("INPUT_INT_DATA"));
+        view.printMessage(manager.getMessage("INPUT_COMMAND"));
         while (!sc.hasNextInt()) {
-            view.printMessage(manager.getMessage("WRONG_INPUT_DATA") + manager.getMessage("INPUT_INT_DATA"));
+            view.printMessage(manager.getMessage("WRONG_INPUT_DATA") + manager.getMessage("INPUT_COMMAND"));
             sc.next();
         }
         return sc.nextInt();
