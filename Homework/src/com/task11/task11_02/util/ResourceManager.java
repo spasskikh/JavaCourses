@@ -8,11 +8,11 @@ public enum ResourceManager {
     private ResourceBundle resourceBundle;
 
     private ResourceManager() {
-        resourceBundle = ResourceBundle.getBundle("task11/properties/message", new Locale("en", "UK"));
+        resourceBundle = ResourceBundle.getBundle("task11_02/properties/message", new Locale("en", "UK"));
     }
 
     public void changeLocale(Locale locale) {
-        resourceBundle = ResourceBundle.getBundle("task11/properties/message", locale);
+        resourceBundle = ResourceBundle.getBundle("task11_02/properties/message", locale);
     }
 
     public String getMessage(String key) {

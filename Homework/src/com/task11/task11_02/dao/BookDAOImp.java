@@ -13,7 +13,7 @@ import java.util.List;
 public class BookDAOImp implements BookDAO {
 
     static {
-        Path path = Paths.get("/home/anton/Documents/java/IdeaProjects/JavaCourses/Homework/resources/task11/log4j2.xml");
+        Path path = Paths.get("/home/anton/Documents/java/IdeaProjects/JavaCourses/Homework/resources/task11_02/log4j2.xml");
         System.setProperty("log4j.configurationFile", path.toString());
     }
     private static final Logger logger = LogManager.getLogger(BookDAOImp.class);

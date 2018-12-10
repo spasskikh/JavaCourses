@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 public class DBConnection {
 
     static {
-        Path path = Paths.get("/home/anton/Documents/java/IdeaProjects/JavaCourses/Homework/resources/task11/log4j2.xml");
+        Path path = Paths.get("/home/anton/Documents/java/IdeaProjects/JavaCourses/Homework/resources/task11_02/log4j2.xml");
         System.setProperty("log4j.configurationFile", path.toString());
     }
 
@@ -43,7 +43,7 @@ public class DBConnection {
 
     private static Connection createConnection(){
 
-        ResourceBundle resource = ResourceBundle.getBundle("task11/db");
+        ResourceBundle resource = ResourceBundle.getBundle("task11_02/db");
 
         String url = resource.getString("url");
         String user = resource.getString("user");
